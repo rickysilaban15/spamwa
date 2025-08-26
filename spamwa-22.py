@@ -23,8 +23,10 @@ def wa():
     "Accept-Language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
     "Cookie": "laravel_session=eyJpdiI6IllaMDVxOEh0WGFtdEVnR1JWWE5NMGc9PSIsInZhbHVlIjoiUFAzWUZnTDJ4Q3pKM3R1U1k4VE1yV1oxZ1wvOThkQThQaVFJSlBrWnRqd0hHZFJidjhoMXlcL3lMd2VmTmlYWVdCIiwibWFjIjoiZGE4NjZkMjU2MWE4MzJiYzQ3MWI4Y2FkMDRiNzBmYWQzYTliYzgwYzY3MTg3MDc5Njc4YjgxMzVhYWZhNDFkNyJ9"
     }
-    t=requests.get("https://bos.smartlink.id/register").text
-    token=re.findall(r"name=\"_token\" value=\"(.*?)\"",t)[0]
+    t = requests.get("https://bos.smartlink.id/register").text
+print(t)  # tambahkan ini
+token = re.findall(r'name="_token" value="(.*?)"', t)[0]
+
     dat={
     "idkaryawan":"",
     "_token":token,
@@ -93,7 +95,7 @@ if __name__ == '__main__':
         try:
             call()
             sleep(2)
-            wa()
+            #wa()
             sleep(3)
             cal1()
             sleep(2)
